@@ -17,14 +17,23 @@ section {
 
 /* apply styles to <header> */
 header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   padding: 20px 35px;
   background-color: #39a6b2;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  background-image: url("../images/hero-bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-position: 80%;
 }
 
 header h1 {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   font-weight: bold;
   font-size: 36px;
   color: #fce138;
@@ -49,6 +58,7 @@ header nav ul {
 }
 
 header nav ul li a {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin: 0 30px;
   font-weight: lighter;
   font-size: 1.55vw;
@@ -79,6 +89,7 @@ footer a {
 }
 
 .hero-cta {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: 35%;
   text-align: right;
   margin: 3.5%;
@@ -94,6 +105,9 @@ footer a {
 }
 
 .hero {
+  background-image: url("../images/hero-bg.jpeg");
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -101,9 +115,13 @@ footer a {
   background-size: cover;
   background-position: center;
   align-items: flex-start;
+  background-attachment: fixed;
+  background-position: 80%;
 }
 
 .hero-form {
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: 40%;
   margin: 3.5%;
   border: 3px solid #024e76;
@@ -126,6 +144,8 @@ footer a {
 }
 
 .form-input {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
   border: 1px solid #024e76;
   display: block;
   padding: 7px 15px;
@@ -135,12 +155,18 @@ footer a {
   margin-bottom: 15px;
 }
 
+.form-input:focus {
+  background-color: rgba(255, 255, 255, 1);
+  outline: none;
+}
+
 .hero-form label {
   margin: 0 5px;
 }
 
 
 .hero-form button {
+  border-radius: 10px;
   color: #fce138;
   background-color: #024e76;
   border: none;
@@ -150,9 +176,10 @@ footer a {
 
 .intro {}
 
-.section-title ,secondary-border{
+.section-title, secondary-border {
   text-align: center;
 }
+
 .section-title {
   padding-bottom: 20px;
   padding-bottom: 20px;
@@ -181,14 +208,18 @@ footer a {
 }
 
 .step {
+  border-bottom: 1px solid #39a6b2;
   margin: 50px auto;
   padding-bottom: 50px;
   width: 80%;
-  border-bottom: 1px solid #39a6b2;
-  display: flex;
+   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+
+.step:last-child {
+  border-bottom: none;
 }
 
 .steps {
@@ -228,7 +259,7 @@ footer a {
 }
 
 .trainers {
-    width: 100%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -286,7 +317,7 @@ footer a {
   color: #fce138;
 }
 
-.contact-info{
+.contact-info {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -316,12 +347,14 @@ footer a {
   color: #fce138;
 }
 
-.contact-info > * {
+.contact-info>* {
   flex: 1;
   margin: 15px;
 }
 
-.contact-form input, .contact-form textarea{
+.contact-form input, .contact-form textarea {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
   border: 1px solid #024e76;
   display: block;
   padding: 7px 15px;
@@ -332,7 +365,13 @@ footer a {
   margin-top: 5px;
 }
 
+.contact-form input:focus, .contact-form textarea:focus {
+  background-color: rgba(255, 255, 255, 1);
+  outline: none;
+}
+
 .contact-form button {
+  border-radius: 10px;
   width: 100%;
   border: none;
   background: #fce138;
@@ -346,6 +385,7 @@ footer a {
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
   header {
+    position: relative;
     padding-bottom: 0;
     justify-content: center;
   }
@@ -354,6 +394,7 @@ footer a {
     width: 100%;
     text-align: center;
   }
+
   header nav ul {
     margin-top: 20px;
     width: 100%;
@@ -368,25 +409,27 @@ footer a {
     text-align: center;
     width: 100%;
   }
+
   .hero-cta, .hero-form {
     width: 100%;
   }
-  
+
   .hero-cta {
     text-align: center;
   }
+
   .section-title {
     width: 80%;
   }
-  
+
   .trainer {
     flex: 0 70%;
   }
-  
-  .contact-info iframe{
+
+  .contact-info iframe {
     flex: 1 100%;
   }
-  }
+}
 
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
@@ -415,10 +458,10 @@ footer a {
   }
 
   .step-text {
-    flex: 100%;  
+    flex: 100%;
   }
 
-} 
+}
 
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
@@ -444,9 +487,10 @@ footer a {
     text-align: center;
   }
 
-  .contact-info > * {
+  .contact-info>* {
     flex: 0 100%;
   }
+
   .contact-form {
     order: 3;
   }
